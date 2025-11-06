@@ -1,6 +1,6 @@
 package com.example.splab;
 
-class Image implements Element {
+class Image extends ParentElement implements Element {
     String url;
 
     public Image(String imageName){

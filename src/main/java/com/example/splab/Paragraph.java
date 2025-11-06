@@ -1,6 +1,6 @@
 package com.example.splab;
 
-public class Paragraph implements Element {
+public class Paragraph extends ParentElement implements Element {
     String text;
 
     public Paragraph(String text) {
