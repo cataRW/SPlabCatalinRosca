@@ -3,7 +3,7 @@ package com.example.splab;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Section implements Element {
+public class Section extends ParentElement implements Element {
     String title;
     List<Element> elements = new ArrayList<>();
 
@@ -21,10 +21,17 @@ public class Section implements Element {
 
     @Override
     public void add(Element element) {
-        if (element != null) {
-            elements.add(element);
+        if (element instanceof ParentElement be) {
+            if (be.getParent() != null && be.getParent() != this) {
+                throw new IllegalStateException(
+                        "Element is already part of another Section."
+                );
+            }
+            be.setParent(this);
         }
+        elements.add(element);
     }
+
 
     @Override
     public void remove(Element element) {
