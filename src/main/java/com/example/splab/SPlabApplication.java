@@ -31,7 +31,7 @@ public class SPlabApplication {
         cap111.add(new Paragraph("Text from subchapter 1.1.1"));
         cap111.add(cap1111);
 
-        cap1111.add(new Image("Image subchapter 1.1.1.1"));
+        cap1111.add(new ImageProxy("Image subchapter 1.1.1.1"));
 
                 // ex. și un cuprins minimal
         book.add(new TableOfContents("...auto-generated later..."));

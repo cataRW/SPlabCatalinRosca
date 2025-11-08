@@ -1,6 +1,6 @@
 package com.example.splab;
 
-class Image extends ParentElement implements Element {
+class Image {
     String url;
 
     public Image(String imageName){
@@ -11,18 +11,4 @@ class Image extends ParentElement implements Element {
         System.out.println("Image with name: " + url);
     }
 
-     @Override
-     public void add(Element element) {
-
-     }
-
-     @Override
-     public void remove(Element element) {
-
-     }
-
-     @Override
-     public Element get(int index) {
-         return null;
-     }
  }
