@@ -3,9 +3,6 @@ package com.example.splab;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.splab.*;   // sau importuri pe clasele tale
-
-
 
 @SpringBootApplication
 public class SPlabApplication {
