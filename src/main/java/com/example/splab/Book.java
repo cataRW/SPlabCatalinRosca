@@ -1,33 +1,67 @@
 package com.example.splab;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 import java.util.List;
 
+
+@JsonIgnoreProperties({"elements"})
 public class Book extends Section {
+    private Long id;
     public List<Author> authors = new ArrayList<>();
+
+    public Book() {
+        super("");
+    }
 
     public Book(String title){
         super("Book: " + title);
     }
 
-    public void addAuthor(Author author){
-        if(author != null) {
-            authors.add(author);
-        }
+    // --- ID ---
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
+    public String getTitle() {
+        if (title == null) return null;
+        return title.startsWith("Book: ") ? title.substring(6) : title;
+    }
+
+    public void setTitle(String t) {
+        this.title = (t == null || t.isBlank()) ? "" : "Book: " + t.trim();
+    }
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(List<Author> authors) {
+        this.authors = (authors != null) ? authors : new ArrayList<>();
     }
 
     public void print(){
         System.out.println(title);
         System.out.println();
         System.out.println("Authors:");
-
         for(Author author : authors){
             author.print();
             System.out.println();
         }
-
         for(Element element : super.elements){
             element.print();
+        }
+    }
+
+    public void addAuthor(Author author){
+        if(author != null) {
+            authors.add(author);
         }
     }
 }
