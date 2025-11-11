@@ -4,6 +4,7 @@ public class Author {
     String name;
     String suname;
 
+    public Author() {}
     public Author(String name, String suname) {
         this.name = name;
         this.suname = suname;
